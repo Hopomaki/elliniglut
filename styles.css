@@ -119,8 +119,8 @@ nav a:hover {
 
 .hero-shade {
   background:
-    linear-gradient(90deg, rgba(0, 59, 73, 0.9), rgba(0, 59, 73, 0.52), rgba(0, 59, 73, 0.12)),
-    linear-gradient(0deg, rgba(0, 59, 73, 0.82), transparent 45%);
+    linear-gradient(90deg, rgba(0, 59, 73, 0.92), rgba(0, 59, 73, 0.58), rgba(0, 59, 73, 0.16)),
+    linear-gradient(0deg, rgba(0, 59, 73, 0.86), transparent 46%);
 }
 
 .hero-content {
@@ -217,19 +217,27 @@ h3 {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1px;
-  width: min(1040px, 100%);
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  grid-template-columns: 1.28fr 1fr 1fr;
+  gap: 10px;
+  width: min(1080px, 100%);
+  overflow: visible;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(14px);
 }
 
 .hero-panel div {
-  padding: 20px;
-  background: rgba(0, 59, 73, 0.36);
+  min-height: 132px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(0, 59, 73, 0.58);
+  box-shadow: 0 18px 48px rgba(0, 30, 38, 0.28);
+  backdrop-filter: blur(14px);
+}
+
+.hero-panel .hero-panel-highlight {
+  border-color: rgba(240, 75, 36, 0.88);
+  background: linear-gradient(135deg, #f04b24, #b9351a);
+  box-shadow: 0 24px 70px rgba(240, 75, 36, 0.34);
 }
 
 .hero-panel span,
@@ -242,8 +250,19 @@ h3 {
   text-transform: uppercase;
 }
 
+.hero-panel .hero-panel-highlight span {
+  color: rgba(255, 255, 255, 0.84);
+}
+
 .hero-panel strong {
   font-size: clamp(19px, 2vw, 28px);
+}
+
+.hero-panel .hero-panel-highlight strong {
+  display: block;
+  color: white;
+  font-size: clamp(52px, 7vw, 86px);
+  line-height: 0.9;
 }
 
 section {
@@ -526,7 +545,12 @@ footer {
   }
 
   .hero-panel div {
+    min-height: 0;
     padding: 18px;
+  }
+
+  .hero-panel .hero-panel-highlight strong {
+    font-size: 58px;
   }
 
   .image-story {
