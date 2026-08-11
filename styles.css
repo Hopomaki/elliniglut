@@ -273,20 +273,31 @@ section {
   max-width: 980px;
 }
 
-.intro-band {
+.intro-band,
+.business-case-band {
   background: var(--paper);
 }
 
 .intro-grid,
-.metric-row {
+.metric-row,
+.lender-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
   margin-top: 34px;
 }
 
+.case-points {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 34px;
+}
+
 .intro-grid article,
-.metric-row article {
+.metric-row article,
+.case-points article,
+.lender-grid article {
   border-radius: 8px;
   padding: 26px;
   border: 1px solid var(--line);
@@ -311,7 +322,11 @@ section {
 .metric-row p,
 .deal-section p,
 .finance-note p,
-.next-section p {
+.next-section p,
+.business-case-band p,
+.lender-section p,
+.case-points p,
+.lender-grid p {
   color: #52656a;
   line-height: 1.68;
 }
@@ -377,6 +392,32 @@ dd {
   transform: translateY(24px);
 }
 
+.case-points small,
+.deal-grid small,
+.lender-grid small {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--green-dark);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.case-points strong,
+.deal-grid strong,
+.lender-grid strong {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--ink);
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1;
+}
+
+.case-points strong {
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.05;
+}
+
 .investment-band {
   background: var(--ink);
   color: white;
@@ -408,8 +449,10 @@ dd {
   background: #f7faf9;
 }
 
-.deal-section .section-copy p:not(.eyebrow) {
-  max-width: 760px;
+.deal-section .section-copy p:not(.eyebrow),
+.lender-section .section-copy p:not(.eyebrow),
+.business-case-band .section-copy p:not(.eyebrow) {
+  max-width: 800px;
   font-size: 18px;
 }
 
@@ -428,21 +471,13 @@ dd {
   box-shadow: 0 10px 30px rgba(0, 59, 73, 0.06);
 }
 
-.deal-grid small {
-  display: block;
-  margin-bottom: 10px;
-  color: var(--green-dark);
-  font-size: 12px;
-  font-weight: 800;
-  text-transform: uppercase;
+.lender-section {
+  background: #edf5f6;
 }
 
-.deal-grid strong {
-  display: block;
-  margin-bottom: 12px;
-  color: var(--ink);
-  font-size: clamp(28px, 4vw, 44px);
-  line-height: 1;
+.lender-grid article:first-child {
+  border-color: rgba(240, 75, 36, 0.42);
+  background: #fff0ec;
 }
 
 .finance-layout {
@@ -521,6 +556,12 @@ footer {
   font-size: 13px;
 }
 
+@media (max-width: 1040px) {
+  .case-points {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 860px) {
   .site-header {
     position: absolute;
@@ -540,7 +581,9 @@ footer {
   .metric-row,
   .deal-grid,
   .finance-layout,
-  .image-story {
+  .image-story,
+  .case-points,
+  .lender-grid {
     grid-template-columns: 1fr;
   }
 
